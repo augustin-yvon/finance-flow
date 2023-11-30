@@ -1,5 +1,4 @@
 import { useState, useEffect  } from "react";
-import Button from "react-bootstrap/esm/Button";
 import Modal from "react-bootstrap/esm/Modal";
 
 
@@ -8,9 +7,9 @@ function SendModal({ }) {
 
     useEffect(()=> {
         fetch('http://localhost:3000/solde')
-        .then(res => res.json())
+        .then(response => response.json())
         .then(data => setSolde(data))
-        .catch(err => console.log(err))
+        .catch(error => console.log(error))
     }, [])
 
     const [show, setShow] = useState(false);
@@ -67,23 +66,23 @@ function SendModal({ }) {
 
     return (
         <>
-            <Button onClick={handleShow}>
-                Faire un virement
-            </Button>
+            <button onClick={handleShow}>
+                Virement
+            </button>
 
             <Modal show={show} onHide={handleClose}>
-                <div className="modal-form-container">
+                <div className="form-modal-container">
                     <h1>Virement</h1>
-                    <form action="" onSubmit={handleSubmitSend}>
-                        <select name="send" id="send-select">
+                    <form onSubmit={handleSubmitSend}>
+                        <select className="form-modal-beneficiaire" name="send">
                             <option value="">Choisir un bénéficiare :</option>
                             <option value="Lucas">Lucas</option>
                             <option value="Augustin">Augustin</option>
                         </select>
 
-                        <input type="text" placeholder="Title" name="title" id="form-title"/>
+                        <input className="form-modal-title" type="text" name="title" placeholder="Title" />
 
-                        <select name="categorie" id="categorie-select">
+                        <select className="form-modal-categorie" name="categorie">
                             <option value="">Catégorie :</option>
                             <option value="1">Abonnement</option>
                             <option value="2">Éducation</option>
@@ -94,11 +93,11 @@ function SendModal({ }) {
                             <option value="7">Autres</option>
                         </select>
 
-                        <textarea id="form-description" name="description" rows="3" cols="25" placeholder="Description..."></textarea>
+                        <textarea className="form-modal-description" name="description" rows="3" cols="25" placeholder="Description..."></textarea>
 
-                        <input type="text" name="montant" id="montant" placeholder="Montant"/>
+                        <input className="form-modal-montant" type="text" name="montant" placeholder="Montant"/>
 
-                        <input type="submit" value="Faire le virement"/>
+                        <input className="form-modal-submit" type="submit" value="Faire le virement"/>
                     </form>
                 </div>
                 <svg className="close-btn" onClick={handleClose} xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512">f<path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>

@@ -5,12 +5,12 @@ import SendModal from './components/modal/SendModal';
 function App() {
     const [solde, setSolde] = useState([]);
 
-    useEffect(() => {
+    useEffect(()=> {
         fetch('http://localhost:3000/solde')
-            .then(res => res.json())
-            .then(data => setSolde(data))
-            .catch(err => console.log(err));
-    }, []);
+        .then(response => response.json())
+        .then(data => setSolde(data))
+        .catch(error => console.log(error))
+    }, [])
 
     const handleSubmitAdd = async (event) => {
         event.preventDefault();
@@ -64,27 +64,20 @@ function App() {
             <header>
                 <h1>GoodBank</h1>
 
-                <div className='solde-actuel'>
-                    <h2>Solde actuel :</h2>
-                    <Solde></Solde>
-                </div>
+                <Solde></Solde>
             </header>
-
             
-            <div className="top">
-                
-                
-                <form className='add-form' onSubmit={handleSubmitAdd}>
-                    <label className='add' htmlFor="montant">
+            <div className="form-add-container">
+                <form className='form-add' onSubmit={handleSubmitAdd}>
+                    <label className='form-add-montant-label' htmlFor="montant">
                         Ajouter :
-                        <input type="text" id="montant" name="montant" />
+                        <input className='form-add-montant' type="text" name="montant" id='montant'/>
                     </label>
 
-                    <input type="submit" value="Add" />
+                    <input className='form-add-submit' type="submit" value="Add" />
                 </form>
-
-                <SendModal></SendModal>
             </div>
+            <SendModal></SendModal>
         </div>
     );
 }
