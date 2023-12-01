@@ -1,0 +1,72 @@
+.open-modal {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    font-weight: 580;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.form-modal-container {
+    position: absolute;
+    top: 30%;
+    left: 30px;
+    background-color: white;
+    width: 80%;
+    padding: 15px;
+    padding-bottom: 60px;
+    border-radius: 5px;
+}
+
+.form-modal-container h1 {
+    margin-bottom: 10px;
+}
+
+.form-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.close-modal {
+    top: 5px;
+    right: 5px;
+}
+
+.form-modal-submit {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background-color: rgb(77, 77, 216);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    line-height: 1.15rem;
+}
+
+input, select, textarea {
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+.form-modal-title, .form-modal-categorie {
+    width: 40%;
+}
+
+.form-modal-montant {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    border-radius: 5px; 
+}

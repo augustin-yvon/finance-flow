@@ -64,7 +64,7 @@ app.post('/add', (request, response) => {
 
 // Ajoute une transaction
 app.post('/add-transaction', (request, response) => {
-    const { title, description, montant, categorie, date, direction } = request.body;
+    const { date, title, description, montant, direction, categorie } = request.body;
 
     const sql = "INSERT INTO transaction (date, title, description, value, direction, categorie) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -72,7 +72,7 @@ app.post('/add-transaction', (request, response) => {
         if (error) {
             return response.json(error);
         } else {
-            return response.json({ message: 'Transaction ajoutée avec succés' });
+            return response.json({ message: 'Transaction effectué' });
         }
     })
 });

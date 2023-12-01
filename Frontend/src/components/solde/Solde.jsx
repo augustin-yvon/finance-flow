@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './solde.css';
 
 function Solde() {
     const [solde, setSolde] = useState([])
