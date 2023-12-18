@@ -73,7 +73,7 @@ function SendModal({ }) {
 
         setShow(false);
         setSolde([{ solde: newSolde }]);
-        window.reload();
+        location.reload();
     };
 
     return (
