@@ -36,7 +36,7 @@ app.get('/solde', (request, response) => {
 
 // Récupère toutes les transactions
 app.get('/transactions', (request, response) => {
-    const sql = "SELECT * from transactions"
+    const sql = "SELECT * from transaction"
 
     db.query(sql, (error, data) => {
         if (error) {

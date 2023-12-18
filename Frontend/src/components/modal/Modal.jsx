@@ -67,13 +67,13 @@ function SendModal({ }) {
             });
     
             const result = await response.text();
-            alert(result);
         } catch (error) {
             console.error('Erreur lors de la mise à jour du solde :', error);
         }
 
-        setSolde([{ solde: newSolde }]);
         setShow(false);
+        setSolde([{ solde: newSolde }]);
+        window.reload();
     };
 
     return (

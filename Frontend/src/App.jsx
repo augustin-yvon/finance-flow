@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import SendModal from './components/modal/Modal';
 import Modal from "react-bootstrap/esm/Modal";
+import History from './components/history/History';
 
 function App() {
     const [solde, setSolde] = useState([]);
@@ -70,7 +71,6 @@ function App() {
             });
     
             const result = await response.text();
-            alert(result);
         } catch (error) {
             console.error('Erreur lors de la mise à jour du solde :', error);
         }
@@ -78,10 +78,6 @@ function App() {
         setSolde([{ solde: newSolde }]);
         setShow(false);
     };
-
-    
-
-    
 
     return (
         <div className='main-container'>
@@ -120,7 +116,7 @@ function App() {
             </div>
 
             <div className="history">
-                
+                {/* <History></History> */}
             </div>
             
             <SendModal></SendModal>
