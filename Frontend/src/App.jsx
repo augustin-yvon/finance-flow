@@ -76,7 +76,7 @@ function App() {
         }
 
         setSolde([{ solde: newSolde }]);
-        setShow(false);
+        setShow(false); 
     };
 
     return (
@@ -109,17 +109,18 @@ function App() {
                 </div>
             </header>
 
+            <SendModal></SendModal>
+
             <div className='corner'>
                 <div className='corner-left'></div>
                 
                 <div className='corner-right'></div>
             </div>
 
-            <div className="history">
-                {/* <History></History> */}
+            <div className="history-inner">
+                <History></History>
             </div>
             
-            <SendModal></SendModal>
         </div>
     );
 }

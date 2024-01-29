@@ -54,8 +54,6 @@ table {
 
 body {
     background-color: rgb(255, 255, 255);
-    width: 100vw;
-    height: 100vh;
     font-family: "Montserrat", sans-serif !important;
 }
 
@@ -209,8 +207,7 @@ header {
     box-shadow: 2px 2px 5px 3px rgba(0,0,0,0.75);
 }
 
-.history {
-    height: 100%;
+.history-inner {
     background-color: rgb(68, 68, 68);
     width: 100%;
 }
